@@ -35,7 +35,7 @@ class ClientController extends Controller
 
     public function index(Request $request)
     {
-        $perPage = $request->input('per_page', 10); // Padrão de 10 clientes por página
+        $perPage = $request->input('per_page', 10); // Por padrão de 10 clientes por página porém configuravel pelo uruário
         $clients = Client::paginate($perPage);
         return view('clients.index', compact('clients'));
     }

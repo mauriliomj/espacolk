@@ -19,6 +19,10 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::post('/submit', [ClientController::class, 'store'])->name('submit');
+
+Route::post('/clients', [ClientController::class, 'store'])->name('clients.store');
+Route::get('/newclient', function () {return 'New client route';})->name('newclient');
+
 Route::get('/newclient', [ClientController::class, 'create'])->name('newclient');
 Route::get('/getallclients', [ClientController::class, 'index'])->name('clients.index');
 Route::get('/getclientbyname', [ClientController::class, 'searchByName'])->name('clients.search');
